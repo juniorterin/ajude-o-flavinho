@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>フラビーニョへのご支援をお願いします — 治療費支援</title>
+  <meta name="description" content="角膜の重い病気と闘うフラビオの治療費支援にご協力ください。クレジットカード、Apple Pay、Google Payで寄付でき、決済はStripeが安全に処理します。" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-lang="jap">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <span class="brand">💙 フラビーニョへのご支援をお願いします</span>
+      <div class="topbar-links">
+        <a class="topbar-link" href="http://vakinha.com.br/vaquinha/flavinho-precisa-de-voces" target="_blank" rel="noopener">
+          Pixでの寄付はこちら(元のページ)
+        </a>
+        <a class="topbar-link lang-switch" href="/pt-br">Português</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-media">
+        <img src="/images/capa.jpg" alt="病気の影響を受けたフラビオの目の写真" />
+      </div>
+      <div class="hero-text">
+        <h1>フラビーニョへのご支援をお願いします</h1>
+        <p class="lede">
+          フラビオは角膜の重い病気と闘っており、治療を続けるために皆さんの
+          支援を必要としています。どんな金額のご寄付でも、回復への大きな
+          力になります。
+        </p>
+      </div>
+    </section>
+
+    <section class="card progress-card" aria-live="polite">
+      <div class="progress-numbers">
+        <div>
+          <span class="raised" id="raised-amount">R$ 0.00</span>
+          <span class="goal-label">/ 目標 <strong id="goal-amount">R$ 0.00</strong></span>
+        </div>
+        <span class="percent" id="percent-label">0%</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
+      </div>
+      <p class="supporters" id="supporters-label">最初のご支援者になりませんか?</p>
+    </section>
+
+    <section class="card donate-card">
+      <h2>寄付をする</h2>
+      <p class="donate-sub">金額を選択するか、ご希望の金額を入力してください。</p>
+
+      <div class="amount-grid" id="amount-grid">
+        <button type="button" class="amount-btn" data-amount="30">R$ 30</button>
+        <button type="button" class="amount-btn" data-amount="50">R$ 50</button>
+        <button type="button" class="amount-btn" data-amount="100">R$ 100</button>
+        <button type="button" class="amount-btn" data-amount="200">R$ 200</button>
+        <button type="button" class="amount-btn" data-amount="500">R$ 500</button>
+      </div>
+
+      <label class="custom-amount-label" for="custom-amount">その他の金額 (R$ ブラジルレアル)</label>
+      <input
+        type="number"
+        id="custom-amount"
+        class="custom-amount-input"
+        placeholder="例: 75"
+        min="5"
+        max="50000"
+        step="1"
+        inputmode="decimal"
+      />
+
+      <button type="button" id="donate-button" class="donate-button" disabled>
+        寄付する
+      </button>
+      <p class="error-message" id="error-message" hidden></p>
+
+      <p class="secure-note">
+        🔒 お支払いはStripeが安全に処理します。このサイトがカード情報を
+        保存することはありません。金額はブラジルレアル(BRL)建てで、
+        カード会社が自動的に日本円に換算します。
+      </p>
+    </section>
+
+    <section class="card story-card">
+      <h2>フラビオについて</h2>
+      <p>
+        2018年から、フラビオは左目の角膜に重い病気を患っており、これまでに
+        2回の角膜穿孔(せんこう)を経験しています。1回目の穿孔の後、
+        2019年に角膜移植手術を受け、経済的に立て直すために日本へ渡り
+        働いていました。
+      </p>
+      <p>
+        2024年末に2度目の角膜穿孔が起こり、治療を続けるため2025年に
+        ブラジルへ帰国し、カンピーナス州立大学病院(Unicamp)で治療を
+        受けています。医師の指示により、現在は仕事をすることができません。
+      </p>
+      <p>
+        点眼薬や軟膏、皮膚科用の専用製品にかかる月々の費用は
+        <strong>1,000レアル</strong>を超えており、フラビオ本人によると、
+        海外で働いて貯めた貯金はすでに治療のためにすべて使い果たして
+        しまったとのことです。
+      </p>
+      <p>
+        このキャンペーンの目標金額は<strong>15,000レアル</strong>です。
+        この治療の段階を乗り越えるための支援をどうぞよろしくお願いします。
+        どんな金額でも大きな助けになります。そして、このページを
+        シェアしていただくことも、大きな支援のひとつです。
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>
+        お支払いは<strong>Stripe</strong>が処理します。世界最大級の
+        決済代行会社のひとつです。カード情報がこのサイトを経由することは
+        ありません。
+      </p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

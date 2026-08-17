@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "public",
+  "rewrites": [
+    { "source": "/pt-br", "destination": "/pt-br/index.html" },
+    { "source": "/jap", "destination": "/jap/index.html" }
+  ]
+}

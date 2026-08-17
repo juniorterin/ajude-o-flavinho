@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flavinho precisa de vocês — Vaquinha para tratamento</title>
+  <meta name="description" content="Ajude o Flavio a custear o tratamento de uma doença grave na córnea. Doe com cartão, Apple Pay ou Google Pay, com pagamento seguro via Stripe." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-lang="pt-br">
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <span class="brand">💙 Flavinho precisa de vocês</span>
+      <div class="topbar-links">
+        <a class="topbar-link" href="http://vakinha.com.br/vaquinha/flavinho-precisa-de-voces" target="_blank" rel="noopener">
+          Prefere Pix? Veja a vaquinha original
+        </a>
+        <a class="topbar-link lang-switch" href="/jap">日本語</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-media">
+        <img src="/images/capa.jpg" alt="Foto do olho do Flavio, afetado pela doença na córnea" />
+      </div>
+      <div class="hero-text">
+        <h1>Flavinho precisa de vocês</h1>
+        <p class="lede">
+          Flavio está enfrentando uma doença grave na córnea e precisa de ajuda
+          para continuar o tratamento. Cada doação, de qualquer valor, faz
+          diferença de verdade nessa recuperação.
+        </p>
+      </div>
+    </section>
+
+    <section class="card progress-card" aria-live="polite">
+      <div class="progress-numbers">
+        <div>
+          <span class="raised" id="raised-amount">R$ 0,00</span>
+          <span class="goal-label">arrecadados de <strong id="goal-amount">R$ 0,00</strong></span>
+        </div>
+        <span class="percent" id="percent-label">0%</span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progress-fill" style="width: 0%"></div>
+      </div>
+      <p class="supporters" id="supporters-label">Seja o primeiro a apoiar</p>
+    </section>
+
+    <section class="card donate-card">
+      <h2>Fazer uma doação</h2>
+      <p class="donate-sub">Escolha um valor ou digite o quanto quiser contribuir.</p>
+
+      <div class="amount-grid" id="amount-grid">
+        <button type="button" class="amount-btn" data-amount="30">R$ 30</button>
+        <button type="button" class="amount-btn" data-amount="50">R$ 50</button>
+        <button type="button" class="amount-btn" data-amount="100">R$ 100</button>
+        <button type="button" class="amount-btn" data-amount="200">R$ 200</button>
+        <button type="button" class="amount-btn" data-amount="500">R$ 500</button>
+      </div>
+
+      <label class="custom-amount-label" for="custom-amount">Ou outro valor (R$)</label>
+      <input
+        type="number"
+        id="custom-amount"
+        class="custom-amount-input"
+        placeholder="Ex: 75"
+        min="5"
+        max="50000"
+        step="1"
+        inputmode="decimal"
+      />
+
+      <button type="button" id="donate-button" class="donate-button" disabled>
+        Doar agora
+      </button>
+      <p class="error-message" id="error-message" hidden></p>
+
+      <p class="secure-note">
+        🔒 Pagamento processado com segurança pela Stripe. Este site não
+        armazena dados do seu cartão.
+      </p>
+    </section>
+
+    <section class="card story-card">
+      <h2>A história do Flavio</h2>
+      <p>
+        Desde 2018, o Flavio enfrenta uma doença grave na córnea do olho
+        esquerdo, que já causou duas perfurações. Depois da primeira, em
+        2019, ele passou por um transplante de córnea e foi trabalhar no
+        Japão para se reerguer financeiramente.
+      </p>
+      <p>
+        No fim de 2024, uma segunda perfuração aconteceu, obrigando-o a
+        voltar ao Brasil em 2025 para dar continuidade ao tratamento na
+        Unicamp. Por causa das restrições médicas, ele não pode trabalhar no
+        momento.
+      </p>
+      <p>
+        Os custos mensais com colírios, pomadas e produtos dermatológicos
+        específicos passam de <strong>R$ 1.000,00</strong>, e, segundo o
+        próprio Flavio, todas as economias que ele conseguiu juntar
+        trabalhando no exterior já foram utilizadas no tratamento.
+      </p>
+      <p>
+        A meta desta campanha é arrecadar <strong>R$ 15.000,00</strong> para
+        ajudar a cobrir essa fase do tratamento. Qualquer valor que você
+        puder doar ajuda — e compartilhar esta página também é uma forma
+        enorme de ajudar.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>
+        Pagamentos processados pela <strong>Stripe</strong>, uma das maiores
+        processadoras de pagamento do mundo. Seus dados de cartão nunca
+        passam por este site.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

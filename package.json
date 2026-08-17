@@ -1,0 +1,16 @@
+{
+  "name": "flavinho-doacoes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pagina de doacao para o tratamento do Flavinho, com pagamentos via Stripe Checkout (cartao, Apple Pay e Google Pay), hospedada no Vercel.",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "stripe": "^17.3.1",
+    "@upstash/redis": "^1.34.3"
+  },
+  "devDependencies": {
+    "vercel": "^59.1.3"
+  }
+}

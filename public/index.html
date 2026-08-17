@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flavinho precisa de vocês / フラビーニョへのご支援</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="wrap picker-wrap">
+    <div class="hero-media picker-media">
+      <img src="/images/capa.jpg" alt="Foto do olho do Flavio" />
+    </div>
+    <h1 class="picker-title">Flavinho precisa de vocês</h1>
+    <p class="picker-sub">Escolha o idioma / 言語を選択してください</p>
+    <div class="picker-buttons">
+      <a class="result-link picker-btn" href="/pt-br">🇧🇷 Português</a>
+      <a class="result-link picker-btn" href="/jap">🇯🇵 日本語</a>
+    </div>
+  </main>
+  <script>
+    // Se o navegador do visitante estiver em japones, sugerimos essa versao
+    // primeiro; caso contrario, seguimos com portugues como padrao. O
+    // visitante sempre pode trocar de idioma dentro da pagina.
+    var lang = (navigator.language || "").toLowerCase();
+    if (lang.startsWith("ja")) {
+      document.title = "フラビーニョへのご支援をお願いします";
+    }
+  </script>
+</body>
+</html>
