@@ -301,6 +301,21 @@ img {
   text-align: center;
 }
 
+.footer .credit {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+.footer .credit a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer .credit a:hover {
+  text-decoration: underline;
+}
+
 /* Result pages (success / cancel) */
 .result-wrap {
   max-width: 480px;
