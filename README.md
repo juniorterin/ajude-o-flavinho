@@ -69,6 +69,19 @@ Se preferir, também dá pra criar a conta direto em https://upstash.com
 (gratuito) e colar a "REST URL" e o "REST TOKEN" do banco manualmente nas
 variáveis de ambiente do Vercel — o resultado final é o mesmo.
 
+**Gravar o valor já arrecadado fora da Stripe** (ex: os R$ 538,29 recebidos
+via Pix na vaquinha original): o banco é a única fonte de verdade do total
+exibido no site, então esse valor inicial precisa ser gravado nele uma
+única vez, em vez de ficar numa variável de ambiente. Com o `.env.local`
+preenchido (veja o passo 4), rode:
+
+```bash
+node scripts/seed-total.js 538.29
+```
+
+Rode de novo a qualquer momento se quiser ajustar esse valor manualmente
+(ex: somar uma doação que chegou por outro canal).
+
 ## 3. Webhook da Stripe (obrigatório — é o que liga o pagamento ao banco)
 
 1. Dashboard Stripe > Developers > Webhooks > **Add endpoint**.
@@ -109,8 +122,6 @@ Com o projeto em um repositório Git (GitHub/GitLab/Bitbucket):
      equivalentes `KV_REST_API_URL` / `KV_REST_API_TOKEN`, já preenchidos
      automaticamente se você conectou o banco pela aba Storage)
    - `GOAL_CENTS` → `1500000` (R$ 15.000,00, ajuste se quiser)
-   - `BASE_RAISED_CENTS` → `53829` (R$ 538,29 já arrecadados via Pix na
-     vaquinha original — ajuste ou zere se não quiser somar esse valor)
 3. Clique em **Deploy**.
 
 Ou, via linha de comando, direto da pasta do projeto:
@@ -152,12 +163,15 @@ api/
   webhook.js                   grava cada doacao confirmada no banco (obrigatorio)
 lib/
   redis.js                     conexao com o banco Redis (Upstash)
+scripts/
+  seed-total.js                grava o valor inicial (fora da Stripe) no banco, uma vez
 public/
   index.html                   escolha de idioma
   pt-br/                       versao em portugues (index, success, cancel)
   jap/                         versao em japones (index, success, cancel)
   styles.css / script.js       compartilhados pelas duas versoes
-  images/capa.jpg              foto usada na campanha original
+  images/capa.jpg              foto usada na campanha original (hero das paginas)
+  images/cover.jpg             capa kawaii usada nas meta tags (og:image / preview de compartilhamento)
 ```
 
 ### Ver as doações gravadas
@@ -171,8 +185,9 @@ por item, em JSON) e `flavinho:total_cents` (o total em centavos).
 
 - **Textos e história:** editar `public/pt-br/index.html` e
   `public/jap/index.html`.
-- **Meta e valor já arrecadado fora da Stripe:** variáveis `GOAL_CENTS` e
-  `BASE_RAISED_CENTS` no Vercel.
+- **Meta da campanha:** variável `GOAL_CENTS` no Vercel.
+- **Valor já arrecadado fora da Stripe:** rode `node scripts/seed-total.js
+  <valor>` (grava direto no banco, veja o passo 2).
 - **Valores sugeridos de doação:** editar os botões `data-amount` em
   `public/pt-br/index.html` / `public/jap/index.html`.
 - **Foto de capa:** trocar `public/images/capa.jpg`.
